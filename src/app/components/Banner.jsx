@@ -3,7 +3,7 @@ import React from 'react';
 
 const Banner = () => {
     return (
-        <div className="space-y-12 md:space-y-20 pb-16 overflow-hidden">
+        <div className="space-y-12 md:space-y-20 pb-16 overflow-hidden max-w-7xl mx-auto">
       
       {/*  HERO / BANNER SECTION */}
       <section className="relative rounded-2xl md:rounded-3xl bg-gradient-to-br from-indigo-900 via-indigo-950 to-purple-950 overflow-hidden shadow-2xl text-white py-12 px-5 sm:px-8 md:px-16 text-center lg:text-left flex flex-col lg:flex-row items-center justify-between gap-10 min-h-[500px]">
