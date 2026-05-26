@@ -3,7 +3,20 @@
 import { TrashBin } from "@gravity-ui/icons";
 import {AlertDialog, Button} from "@heroui/react";
 
-export function DeleteAlert() {
+export function DeleteAlert({idea}) {
+  const {
+    _id,
+    ideaTitle,
+    imageUrl,
+    estimatedBudget,
+    category,
+    shortDescription,
+    detailedDescription,
+    problemStatement,
+    proposedSolution,
+    targetAudience,
+    tags,
+  } = idea || {};
   return (
     <AlertDialog>
       <Button  variant="danger"><TrashBin/> Delete </Button>
@@ -17,7 +30,7 @@ export function DeleteAlert() {
             </AlertDialog.Header>
             <AlertDialog.Body>
               <p>
-                This will permanently delete <strong>My Idea</strong> and all of its
+                This will permanently delete <strong>{ideaTitle}</strong> and all of its
                 data. This action cannot be undone.
               </p>
             </AlertDialog.Body>

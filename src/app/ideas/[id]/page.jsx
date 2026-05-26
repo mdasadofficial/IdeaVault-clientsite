@@ -48,7 +48,7 @@ const IdeaDetailsPage = async ({ params }) => {
 
           {/* Floating Delete Button - Top Right Corner */}
           <div className="absolute   bottom-6 right-6 z-10">
-            <DeleteAlert />
+            <DeleteAlert idea={idea} />
           </div>
           {/* Floating Category Tag & Title */}
           <div className="absolute bottom-6 left-6 right-6 text-white">
