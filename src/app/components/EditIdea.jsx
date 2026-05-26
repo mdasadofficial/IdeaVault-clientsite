@@ -47,6 +47,8 @@ export function EditIdea({ idea }) {
     });
 
     const data = await res.json();
+
+    console.log(data);
     // Toast
   };
 
@@ -270,9 +272,7 @@ export function EditIdea({ idea }) {
                   {/* Action Button: Uniform Premium Styling */}
                   <div className="pt-4">
                     <Modal.Footer>
-                      <Button slot="close" variant="danger">
-                        Cancel
-                      </Button>
+                     
                       <Button
                         type="submit"
                         className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-indigo-500/20 hover:scale-[1.01] active:scale-95 transition-all duration-200 text-base"

@@ -1,3 +1,4 @@
+import { DeleteAlert } from "@/app/components/DeleteAlert";
 import { EditIdea } from "@/app/components/EditIdea";
 import { Button } from "@heroui/react";
 import Image from "next/image";
@@ -26,7 +27,6 @@ const IdeaDetailsPage = async ({ params }) => {
     tags,
   } = idea || {};
 
-  
   return (
     <div className="min-h-screen bg-gray-50/60 py-10 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
@@ -42,8 +42,13 @@ const IdeaDetailsPage = async ({ params }) => {
           {/* Smooth black gradient overlay for text readability */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
           {/* Floating Edit Button - Top Right Corner */}
-          <div className="absolute top-6 right-6 z-10">
+          <div className="absolute   top-6 right-6 z-10">
             <EditIdea idea={idea} />
+          </div>
+
+          {/* Floating Delete Button - Top Right Corner */}
+          <div className="absolute   bottom-6 right-6 z-10">
+            <DeleteAlert />
           </div>
           {/* Floating Category Tag & Title */}
           <div className="absolute bottom-6 left-6 right-6 text-white">
