@@ -1,5 +1,7 @@
+import BookingIdeas from "@/components/BookingIdeas";
 import { DeleteAlert } from "@/components/DeleteAlert";
 import { EditIdea } from "@/components/EditIdea";
+import IdeaCard from "@/components/IdeaCard";
 import { Button } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -97,44 +99,49 @@ const IdeaDetailsPage = async ({ params }) => {
           </div>
         </div>
 
-        {/* 3. Detailed Core Content Section */}
-        <div className="p-6 sm:p-10 space-y-8">
-          {/* Problem Statement Box */}
-          <div className="space-y-3">
-            <h2 className="text-xl font-bold text-gray-800 flex items-center gap-2">
-              <span className="w-1.5 h-6 bg-amber-500 rounded-full inline-block"></span>
-              Problem Statement
-            </h2>
-            <div className="bg-amber-50/40 p-5 rounded-2xl border border-amber-100 text-gray-700 leading-relaxed text-sm sm:text-base">
-              {problemStatement}
+        <div className=" grid grid-cols-1 lg:grid-cols-3 gap-6 p-6">
+          {" "}
+          <div>
+            {/* 3. Detailed Core Content Section */}
+            <div className="p-6 sm:p-10 space-y-8">
+              {/* Problem Statement Box */}
+              <div className="space-y-3">
+                <h2 className="text-xl font-bold text-gray-800 flex items-center gap-2">
+                  <span className="w-1.5 h-6 bg-amber-500 rounded-full inline-block"></span>
+                  Problem Statement
+                </h2>
+                <div className="bg-amber-50/40 p-5 rounded-2xl border border-amber-100 text-gray-700 leading-relaxed text-sm sm:text-base">
+                  {problemStatement}
+                </div>
+              </div>
+
+              {/* Proposed Solution Box */}
+              <div className="space-y-3">
+                <h2 className="text-xl font-bold text-gray-800 flex items-center gap-2">
+                  <span className="w-1.5 h-6 bg-emerald-500 rounded-full inline-block"></span>
+                  Proposed Solution
+                </h2>
+                <div className="bg-emerald-50/40 p-5 rounded-2xl border border-emerald-100 text-gray-700 leading-relaxed text-sm sm:text-base">
+                  {proposedSolution}
+                </div>
+              </div>
+
+              {/* Detailed Description (Deep Dive) */}
+              <div className="space-y-3 pt-4 border-t border-gray-100">
+                <h2 className="text-xl font-bold text-gray-800 flex items-center gap-2">
+                  <span className="w-1.5 h-6 bg-blue-600 rounded-full inline-block"></span>
+                  Detailed Analysis & Implementation Plan
+                </h2>
+                <p className="text-gray-600 leading-relaxed text-sm sm:text-base whitespace-pre-line antialiased">
+                  {detailedDescription}
+                </p>
+              </div>
             </div>
           </div>
-
-          {/* Proposed Solution Box */}
-          <div className="space-y-3">
-            <h2 className="text-xl font-bold text-gray-800 flex items-center gap-2">
-              <span className="w-1.5 h-6 bg-emerald-500 rounded-full inline-block"></span>
-              Proposed Solution
-            </h2>
-            <div className="bg-emerald-50/40 p-5 rounded-2xl border border-emerald-100 text-gray-700 leading-relaxed text-sm sm:text-base">
-              {proposedSolution}
-            </div>
-          </div>
-
-          {/* Detailed Description (Deep Dive) */}
-          <div className="space-y-3 pt-4 border-t border-gray-100">
-            <h2 className="text-xl font-bold text-gray-800 flex items-center gap-2">
-              <span className="w-1.5 h-6 bg-blue-600 rounded-full inline-block"></span>
-              Detailed Analysis & Implementation Plan
-            </h2>
-            <p className="text-gray-600 leading-relaxed text-sm sm:text-base whitespace-pre-line antialiased">
-              {detailedDescription}
-            </p>
-          </div>
+          <BookingIdeas />
         </div>
-
         {/* 4. Footer System Info */}
-        <div className="bg-gray-50/80 px-6 py-4 border-t border-gray-100 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-xs text-gray-400">
+        <div idea={idea} className="bg-gray-50/80 px-6 py-4 border-t border-gray-100 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-xs text-gray-400">
           <p>
             Database Document ID:{" "}
             <span className="font-mono text-gray-600 font-semibold">

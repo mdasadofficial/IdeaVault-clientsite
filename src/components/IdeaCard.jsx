@@ -48,7 +48,7 @@ const IdeaCard = ({ idea }) => {
           <div>
             <p className="text-[10px] text-gray-400 uppercase tracking-widest font-bold">Est. Budget</p>
             <p className="text-lg font-extrabold text-emerald-600">
-              $ {estimatedBudget > 0 
+               {estimatedBudget > 0 
                 ? `$${Number(estimatedBudget).toLocaleString()}` 
                 : "Flexible"}
             </p>
