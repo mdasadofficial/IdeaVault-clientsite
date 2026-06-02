@@ -1,5 +1,5 @@
 import React from "react";
-import IdeaCard from "../components/IdeaCard";
+import IdeaCard from "../../components/IdeaCard";
 
 const IdeasPage = async () => {
   const res = await fetch("http://localhost:8000/idea");

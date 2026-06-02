@@ -1,5 +1,5 @@
-import { DeleteAlert } from "@/app/components/DeleteAlert";
-import { EditIdea } from "@/app/components/EditIdea";
+import { DeleteAlert } from "@/components/DeleteAlert";
+import { EditIdea } from "@/components/EditIdea";
 import { Button } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
