@@ -15,7 +15,7 @@ import {
 import React from "react";
 import { authClient } from "../../lib/auth-client";
 import { redirect } from "next/navigation";
-import { GrGoogle } from "react-icons/gr";
+import { FcGoogle } from "react-icons/fc";
 const SignUpPage = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -39,6 +39,16 @@ const SignUpPage = () => {
       alert("Signup failed: " + error.message);
     }
   };
+
+
+ const handleGoogleSignIn = async () => {
+  await authClient.signIn.social({
+    provider: "google",
+  });
+
+ }
+
+
 
   return (
     <div className="max-w-7xl mx-auto p-15">
@@ -105,14 +115,14 @@ const SignUpPage = () => {
             </Button> */}
           </div>
         </Form>
-        <div className="flex justify-center items-center gap-2 my-4">
+        <div className="flex justify-center items-center gap-2 ">
           <Separator/>
-          Or continue with
+          <div className="whitespace-nowrap">Or continue with</div>
           <Separator/>
         </div>
         <div>
             
-            <Button  className="w-full border" variant="ghost"><GrGoogle/> Sign In with Google</Button> </div>
+            <Button onClick={handleGoogleSignIn}  className="w-full border" variant="ghost"><FcGoogle/> Sign In with Google</Button> </div>
       </Card>
     </div>
   );
