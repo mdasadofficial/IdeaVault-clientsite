@@ -99,7 +99,7 @@ const IdeaDetailsPage = async ({ params }) => {
           </div>
         </div>
 
-        <div className=" grid grid-cols-1 lg:grid-cols-3 gap-6 p-6">
+        <div className=" flex justify-between">
           {" "}
           <div>
             {/* 3. Detailed Core Content Section */}
