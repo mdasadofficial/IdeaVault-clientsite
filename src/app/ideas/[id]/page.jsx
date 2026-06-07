@@ -68,14 +68,7 @@ const IdeaDetailsPage = async ({ params }) => {
 
         {/* 2. Meta Info Stats Strip */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 p-6 bg-slate-50 border-b border-gray-100">
-          <div className="flex flex-col">
-            <span className="text-[11px] text-gray-400 font-extrabold uppercase tracking-wider">
-              Estimated Budget
-            </span>
-            <span className="text-xl font-black text-emerald-600 mt-0.5">
-              ${estimatedBudget}
-            </span>
-          </div>
+        
           <div className="flex flex-col">
             <span className="text-[11px] text-gray-400 font-extrabold uppercase tracking-wider">
               Target Audience
@@ -138,7 +131,7 @@ const IdeaDetailsPage = async ({ params }) => {
               </div>
             </div>
           </div>
-          <BookingIdeas />
+          <BookingIdeas  idea={idea}/>
         </div>
         {/* 4. Footer System Info */}
         <div idea={idea} className="bg-gray-50/80 px-6 py-4 border-t border-gray-100 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-xs text-gray-400">

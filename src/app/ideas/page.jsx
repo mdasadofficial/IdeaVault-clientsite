@@ -4,7 +4,7 @@ import IdeaCard from "../../components/IdeaCard";
 const IdeasPage = async () => {
   const res = await fetch("http://localhost:8000/idea");
   const ideas = await res.json();
-  console.log(ideas);
+  console.log("What an idea", ideas);
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 items-stretch p-4">
       {/* Heading full width jore thakbe */}
