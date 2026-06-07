@@ -1,7 +1,6 @@
 "use client";
 
-
-import { Card } from "@heroui/react";
+import { Button, Card } from "@heroui/react";
 import React from "react";
 import { DateField, Label } from "@heroui/react";
 const BookingIdeas = ({ idea }) => {
@@ -30,14 +29,17 @@ const BookingIdeas = ({ idea }) => {
           ${estimatedBudget}
         </span>
       </div>
-      <DateField className="w-[256px]" name="date">
-        <Label>Date</Label>
+      <DateField className="w-[full]" name="date">
+        <Label> Booking Date</Label>
         <DateField.Group>
           <DateField.Input>
             {(segment) => <DateField.Segment segment={segment} />}
           </DateField.Input>
         </DateField.Group>
       </DateField>
+      <Button className="mt-4 bg-emerald-600 text-white hover:bg-emerald-700 transition-colors duration-300 w-full">
+        Book Now
+      </Button>
     </Card>
   );
 };
