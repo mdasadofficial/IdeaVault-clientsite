@@ -1,9 +1,14 @@
 "use client";
 
 import { Button, Card } from "@heroui/react";
-import React from "react";
+import React, { useState } from "react";
 import { DateField, Label } from "@heroui/react";
+import { authClient } from "@/lib/auth-client";
 const BookingIdeas = ({ idea }) => {
+  const { data: session } = authClient.useSession();
+  const user = session?.user;
+
+  const [departureDate, setDepartureDate] = useState(null);
   const {
     _id,
     ideaTitle,
@@ -17,6 +22,33 @@ const BookingIdeas = ({ idea }) => {
     targetAudience,
     tags,
   } = idea || {};
+  const handleBooking = async () => {
+    const bookingData = {
+      userId: user?.id,
+      departureDate: new Date(departureDate),
+      userMail: user?.email,
+      ideaId: user?._id,
+      ideaTitle: user?.ideaTitle,
+      estimatedBudget: user?.estimatedBudget,
+      userName: user?.name,
+      userImage: user?.image,
+
+      price: user?.estimatedBudget,
+      targetAudience: user?.targetAudience,
+    };
+
+    const res = await fetch("http://localhost:8000/users", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(bookingData),
+    });
+    const data = await res.json();
+    console.log(data);
+  };
+
+  //   console.log(new Date(departureDate));
 
   return (
     <Card className="p-6 rounded-2xl shadow-lg bg-white border border-gray-100 hover:shadow-2xl transition-all duration-300 ease-in-out w-[50%]">
@@ -29,7 +61,7 @@ const BookingIdeas = ({ idea }) => {
           ${estimatedBudget}
         </span>
       </div>
-      <DateField className="w-[full]" name="date">
+      <DateField onChange={setDepartureDate} className="w-[full]" name="date">
         <Label> Booking Date</Label>
         <DateField.Group>
           <DateField.Input>
@@ -37,7 +69,10 @@ const BookingIdeas = ({ idea }) => {
           </DateField.Input>
         </DateField.Group>
       </DateField>
-      <Button className="mt-4 bg-emerald-600 text-white hover:bg-emerald-700 transition-colors duration-300 w-full">
+      <Button
+        onClick={handleBooking}
+        className="mt-4 bg-emerald-600 text-white hover:bg-emerald-700 transition-colors duration-300 w-full"
+      >
         Book Now
       </Button>
     </Card>
