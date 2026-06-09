@@ -9,7 +9,7 @@ import React from "react";
 const Navbar = () => {
   const { data: session } = authClient.useSession();
   const user = session?.user;
-  console.log(session);
+  // console.log(user);
 
 
 
@@ -20,8 +20,7 @@ await authClient.signOut();
 
   return (
     <nav
-      className="flex
-     justify-between p-5  "
+      className="flex justify-between p-5"
     >
       <div>
         <Link href={"/"}>
@@ -47,7 +46,7 @@ await authClient.signOut();
           <Link href={"/add-idea"}>Add Idea</Link>
         </li>
         <li>
-          <Link href={"/my-idea"}>My Ideas</Link>
+          <Link href={"/my-ideas"}>My Ideas</Link>
         </li>
       </ul>
 

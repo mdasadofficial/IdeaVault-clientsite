@@ -29,7 +29,7 @@ const SignUpPage = () => {
       image: user.image,
     });
 
-    console.log("Signup response:", { data, error });
+    // console.log("Signup response:", { data, error });
 
     if (data) {
       redirect("/");

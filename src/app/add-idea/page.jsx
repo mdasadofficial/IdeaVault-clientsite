@@ -18,7 +18,7 @@ const AddIdeaPage = () => {
     const formData = new FormData(e.currentTarget);
 
     const ideaData = Object.fromEntries(formData.entries());
-    console.log("Submitting Idea:", ideaData);
+    // console.log("Submitting Idea:", ideaData);
 
     const res = await fetch("http://localhost:8000/idea", {
       method: "POST",

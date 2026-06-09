@@ -27,7 +27,7 @@ const SignInPage = () => {
       password: user.password,
     });
 
-    console.log("Signin response:", { data, error });
+    // console.log("Signin response:", { data, error });
     
     if (data) {
       redirect("/");

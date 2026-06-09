@@ -29,7 +29,7 @@ export function DeleteAlert({ idea }) {
     });
     const data = await res.json();
     redirect("/ideas");
-    console.log(data);
+    // console.log(data);
   };
 
   return (

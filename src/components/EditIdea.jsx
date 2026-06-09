@@ -36,7 +36,7 @@ export function EditIdea({ idea }) {
     const formData = new FormData(e.currentTarget);
 
     const ideaData = Object.fromEntries(formData.entries());
-    console.log("Submitting Idea:", ideaData);
+    // console.log("Submitting Idea:", ideaData);
 
     const res = await fetch(`http://localhost:8000/idea/${_id}`, {
       method: "PATCH",
@@ -48,7 +48,7 @@ export function EditIdea({ idea }) {
 
     const data = await res.json();
 
-    console.log(data);
+    // console.log(data);
     // Toast
   };
 
