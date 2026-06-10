@@ -11,17 +11,12 @@ const Navbar = () => {
   const user = session?.user;
   // console.log(user);
 
-
-
-const handleSignOut = async () => {
-await authClient.signOut();
-}
-  
+  const handleSignOut = async () => {
+    await authClient.signOut();
+  };
 
   return (
-    <nav
-      className="flex justify-between p-5"
-    >
+    <nav className="flex justify-between p-5">
       <div>
         <Link href={"/"}>
           {" "}
@@ -59,7 +54,11 @@ await authClient.signOut();
             <li>
               {" "}
               <Avatar>
-                <Avatar.Image referrerPolicy="no-referrer" alt="John Doe" src={user?.image} />
+                <Avatar.Image
+                  referrerPolicy="no-referrer"
+                  alt="John Doe"
+                  src={user?.image}
+                />
                 <Avatar.Fallback>{user.name.charAt(0)}</Avatar.Fallback>
               </Avatar>
             </li>
