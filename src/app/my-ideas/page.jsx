@@ -18,9 +18,12 @@ const MyIdeas = async () => {
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold">My Ideas</h1>
-      <div >
+      <div>
         {ideas.map((idea) => (
-          <div className= "flex gap-5 flex-wrap  border p-4 min-w-3xl mx-auto px-4 py-8 mt-6" key={idea._id}>
+          <div
+            className="flex gap-5 flex-wrap  border p-4 min-w-3xl mx-auto px-4 py-8 mt-6"
+            key={idea._id}
+          >
             {" "}
             <Image
               src={idea.imageUrl}
@@ -29,15 +32,14 @@ const MyIdeas = async () => {
               height={200}
             />
             <div>
-                <h1>{idea?.ideaTitle}</h1>
-                <h2 className="text-xl font-semibold">${idea?.estimatedBudget}</h2>
-                <p>{idea?.shortDescription}</p>
-                <p>{idea?.longDescription}</p>
-                <p>{idea?.category}</p>
-                <p>{idea?.targetAudience}</p>
-                
-
-
+              <h1>{idea?.ideaTitle}</h1>
+              <h2 className="text-xl font-semibold">
+                ${idea?.estimatedBudget}
+              </h2>
+              <p>{idea?.shortDescription}</p>
+              <p>{idea?.longDescription}</p>
+              <p>{idea?.category}</p>
+              <p>{idea?.targetAudience}</p>
             </div>
           </div>
         ))}
