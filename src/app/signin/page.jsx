@@ -28,7 +28,7 @@ const SignInPage = () => {
     });
 
     // console.log("Signin response:", { data, error });
-    
+
     if (data) {
       redirect("/");
     }
@@ -42,16 +42,13 @@ const SignInPage = () => {
     await authClient.signIn.social({
       provider: "google",
     });
-  
-   }
-  
+  };
 
   return (
     <div className="max-w-7xl mx-auto p-15">
       <Card className="border">
         <h1 className=" text-2xl font-bold ">Sign In</h1>
         <Form onSubmit={onSubmit} className="flex w-96 flex-col gap-4">
-          
           <TextField
             isRequired
             name="email"
@@ -102,14 +99,20 @@ const SignInPage = () => {
             </Button>
           </div>
         </Form>
-          <div className="flex justify-center items-center gap-2 ">
-                  <Separator/>
-                  <div className="whitespace-nowrap">Or continue with</div>
-                  <Separator/>
-                </div>
-                <div>
-                    
-                    <Button onClick={handleGoogleSignIn}  className="w-full border" variant="ghost"><FcGoogle/> Sign In with Google</Button> </div>
+        <div className="flex justify-center items-center gap-2 ">
+          <Separator />
+          <div className="whitespace-nowrap">Or continue with</div>
+          <Separator />
+        </div>
+        <div>
+          <Button
+            onClick={handleGoogleSignIn}
+            className="w-full border"
+            variant="ghost"
+          >
+            <FcGoogle /> Sign In with Google
+          </Button>{" "}
+        </div>
       </Card>
     </div>
   );
