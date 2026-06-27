@@ -9,7 +9,7 @@ import React from "react";
 const Navbar = () => {
   const { data: session } = authClient.useSession();
   const user = session?.user;
-  // console.log(user);
+  console.log(user);
 
   const handleSignOut = async () => {
     await authClient.signOut();
@@ -63,7 +63,7 @@ const Navbar = () => {
               </Avatar>
             </li>
             <li>
-              <Button onClick={handleSignOut}>Sign Out</Button>
+              <Button variant="danger" onClick={handleSignOut}>Sign Out</Button>
             </li>
           </>
         ) : (
