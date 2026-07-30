@@ -8,8 +8,9 @@ import toast from "react-hot-toast";
 const BookingIdeas = ({ idea }) => {
   const { data: session } = authClient.useSession();
   const user = session?.user;
-
+  
   const [departureDate, setDepartureDate] = useState(null);
+
   const {
     _id,
     ideaTitle,
