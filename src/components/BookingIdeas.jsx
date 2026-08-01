@@ -39,7 +39,7 @@ const BookingIdeas = ({ idea }) => {
       targetAudience: user?.targetAudience,
     };
 
-    const res = await fetch("http://localhost:8000/users", {
+    const res = await fetch("http://localhost:8000/idea", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
