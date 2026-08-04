@@ -10,7 +10,7 @@ const MyIdeas = async () => {
   const user = session?.user;
   console.log(user);
 
-  const res = await fetch(`http://localhost:8000/idea?userId=${user?.id}`);
+  const res = await fetch(`http://localhost:8000/idea/${user?.id}`);
 
   const ideas = await res.json();
   console.log("My Ideas:", ideas);
@@ -19,15 +19,15 @@ const MyIdeas = async () => {
     <div className="max-w-7xl mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold">My Ideas</h1>
       <div>
-        {ideas.map((idea) => (
+        {ideas?.map((idea) => (
           <div
             className="flex gap-5 flex-wrap  border p-4 min-w-3xl mx-auto px-4 py-8 mt-6"
-            key={idea._id}
+            key={idea?._id}
           >
             {" "}
             <Image
-              src={idea.imageUrl}
-              alt={idea.ideaTitle}
+              src={idea?.imageUrl}
+              alt={idea?.ideaTitle}
               width={200}
               height={200}
             />
