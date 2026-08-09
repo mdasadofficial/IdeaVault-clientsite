@@ -29,8 +29,8 @@ const IdeaDetailsPage = async ({ params }) => {
     tags,
   } = idea || {};
 
-  return (
-    <div className="min-h-screen bg-gray-50/60 py-10 px-4 sm:px-6 lg:px-8">
+  return ( 
+    <div className="min-h-screen bg-gray-50/60 py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <div className="max-w-5xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
         {/* 1. Hero Image Banner Section */}
         <div className="relative w-full h-[320px] sm:h-[450px] bg-gray-900">
