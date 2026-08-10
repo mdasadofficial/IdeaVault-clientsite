@@ -13,13 +13,29 @@ const MyIdeas = async () => {
   const res = await fetch(`http://localhost:8000/idea/${user?.id}`);
 
   const ideas = await res.json();
-  // console.log("My Ideas:", ideas);
+  console.log("My Ideas:", ideas);
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold">My Ideas</h1>
 
-      <div></div>
+      <div>
+        {ideas.map((ideas) => (
+          <div
+            key={ideas?._id}
+            className="border p-4 my-4 rounded-lg shadow-md"
+          >
+            <Image
+              src={ideas?.userImage}
+              alt={ideas?.title || "Idea image"}
+              width={300}
+              height={200}
+            />
+            <h2 className="text-xl font-semibold">{ideas?.title}</h2>
+            <p className="text-gray-600">{ideas?.userName}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
