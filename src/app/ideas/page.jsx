@@ -2,7 +2,7 @@ import React from "react";
 import IdeaCard from "../../components/IdeaCard";
 
 const IdeasPage = async () => {
-  const res = await fetch("http://localhost:8000/idea");
+  const res = await fetch("http://localhost:8000/ideas");
   const ideas = await res.json();
   // console.log("What an idea", ideas);
   return (
