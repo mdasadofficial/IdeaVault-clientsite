@@ -10,7 +10,7 @@ const MyIdeas = async () => {
   const user = session?.user;
   // console.log(user);
 
-  const res = await fetch(`http://localhost:8000/idea/${user?.id}`);
+  const res = await fetch(`http://localhost:8000/ideas/${user?.id}`);
 
   const ideas = await res.json();
   console.log("My Ideas:", ideas);

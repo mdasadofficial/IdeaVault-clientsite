@@ -11,7 +11,7 @@ const IdeaCard = ({ idea }) => {
     "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=600&auto=format&fit=crop";
 
 
-console.log(ideaTitle);
+// console.log(ideaTitle);
 
   return (
     <div className=" max-w-sm rounded-2xl overflow-hidden shadow-lg bg-white border border-gray-100 hover:shadow-2xl transition-all duration-300 ease-in-out flex flex-col justify-between group h-full">

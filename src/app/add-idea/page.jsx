@@ -10,6 +10,7 @@ import {
   ListBox,
   Button,
 } from "@heroui/react";
+import toast from "react-hot-toast";
 // import React, { useTransition } from "react";
 
 const AddIdeaPage = () => {
@@ -30,6 +31,7 @@ const AddIdeaPage = () => {
 
     const data = await res.json();
     // Toast
+    toast.success("Added Your Idea Successfully!");
   };
 
   return (

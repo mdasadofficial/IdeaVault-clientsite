@@ -26,7 +26,7 @@ const SignInPage = () => {
       email: user.email,
       password: user.password,
     });
-    console.log({ data, error });
+    // console.log({ data, error });
     // console.log("Signin response:", { data, error });
 
     if (data) {
