@@ -20,19 +20,19 @@ const MyIdeas = async () => {
       <h1 className="text-3xl font-bold">My Ideas</h1>
 
       <div>
-        {ideas.map((ideas) => (
+        {ideas.map((idea) => (
           <div
-            key={ideas?._id}
+            key={idea?._id}
             className="border p-4 my-4 rounded-lg shadow-md"
           >
             <Image
-              src={ideas?.userImage}
-              alt={ideas?.title || "Idea image"}
+              src={idea?.userImage}
+              alt={idea?.title || "Idea image"}
               width={300}
               height={200}
             />
-            <h2 className="text-xl font-semibold">{ideas?.title}</h2>
-            <p className="text-gray-600">{ideas?.userName}</p>
+            <h2 className="text-xl font-semibold">{idea?.title}</h2>
+            <p className="text-gray-600">{idea?.userName}</p>
           </div>
         ))}
       </div>
