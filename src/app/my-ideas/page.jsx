@@ -8,9 +8,9 @@ const MyIdeas = async () => {
     headers: await headers(), // you need to pass the headers object.
   });
   const user = session?.user;
-  // console.log(user);
+  console.log(user);
 
-  const res = await fetch(`http://localhost:8000/ideas/${user?.id}`);
+  const res = await fetch(`http://localhost:8000/idea/${user?.id}`);
 
   const ideas = await res.json();
   console.log("My Ideas:", ideas);
@@ -20,19 +20,14 @@ const MyIdeas = async () => {
       <h1 className="text-3xl font-bold">My Ideas</h1>
 
       <div>
-        {ideas.map((idea) => (
-          <div
-            key={idea?._id}
-            className="border p-4 my-4 rounded-lg shadow-md"
-          >
+        {ideas?.map((idea) => (
+          <div key={idea?.id} className="border p-4 my-4 rounded-lg shadow-md">
             <Image
-              src={idea?.userImage}
+              src={idea?.image}
               alt={idea?.title || "Idea image"}
               width={300}
               height={200}
             />
-            <h2 className="text-xl font-semibold">{idea?.title}</h2>
-            <p className="text-gray-600">{idea?.userName}</p>
           </div>
         ))}
       </div>
