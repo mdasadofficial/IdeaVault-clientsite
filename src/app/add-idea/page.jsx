@@ -30,6 +30,7 @@ const AddIdeaPage = () => {
     });
 
     const data = await res.json();
+    console.log(data);
     // Toast
     toast.success("Added Your Idea Successfully!");
   };

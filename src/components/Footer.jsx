@@ -114,7 +114,7 @@ export default function Footer() {
             {/* Copyright Text */}
             <p className="text-xs text-gray-500 dark:text-gray-400 font-medium order-2 sm:order-1">
               © {new Date().getFullYear()} IdeaVault Platform. All rights
-              reserved.
+              reserved. By <span className="font-bold text-gray-700 dark:text-gray-200">Asad Bhai</span> . Designed & Developed with ❤️ in Bangladesh.
             </p>
 
             {/* Social Links (Premium SVG Icons including new X logo) */}
